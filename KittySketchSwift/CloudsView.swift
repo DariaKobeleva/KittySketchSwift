@@ -16,7 +16,6 @@ struct CloudsView: View {
     var body: some View {
         ZStack {
             GeometryReader { geometry in
-                
                 Image(systemName: showFish ? "fish.fill" : "cloud.fill")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -24,7 +23,6 @@ struct CloudsView: View {
                     .foregroundStyle(.white)
                     .offset(x: cloudOffset, y: geometry.size.height / 4)
                     .onAppear {
-                        // Начальное и конечное положение
                         cloudOffset = -geometry.size.width
                         let endPosition = geometry.size.width * 1.5
                         

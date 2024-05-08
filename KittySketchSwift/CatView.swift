@@ -23,7 +23,10 @@ struct CatView: View {
                 let nearLine = size * 0.1
                 let farLine = size * 0.9
                 
-                Toggle(dreamIsShowing ? "Clouds": "Press for Cat Dream", isOn: $dreamIsShowing)
+                Toggle(
+                    dreamIsShowing ? "Clouds": "Press for Cat Dream",
+                    isOn: $dreamIsShowing
+                )
                     .padding()
                     .frame(width: width * 0.7)
                     .background(Gradient(colors: [.white, .cyan]))

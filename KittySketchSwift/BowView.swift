@@ -25,7 +25,6 @@ struct BowView: View {
                     path.addLine(to: CGPoint(x: middleX * 1.27 , y: middleY / 0.63 ))
                     path.addLine(to: CGPoint(x: middleX * 1.3 , y: middleY * 1.9 ))
                     path.addLine(to: CGPoint(x: middleX , y: middleY * 1.75 ))
-                    
                 }
                 .fill(.specialityPink)
                 .stroke(.black, lineWidth: 7)
@@ -39,7 +38,6 @@ struct BowView: View {
             }
         }
     }
-    
 }
 
 #Preview {

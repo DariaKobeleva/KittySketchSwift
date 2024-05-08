@@ -25,13 +25,11 @@ struct HeadView: View {
                 path.addLine(to: CGPoint(x: width / 3.17, y: height / 1.37))
                 path.addLine(to: CGPoint(x: width / 6.7, y: middleY))
                 path.addLine(to: CGPoint(x: width / 5.5, y: height / 2.6))
-                path.closeSubpath() 
-                
+                path.closeSubpath()
             }
             .fill(.white)
             .stroke(Color.black, lineWidth: 8)
         }
-        
     }
 }
 
