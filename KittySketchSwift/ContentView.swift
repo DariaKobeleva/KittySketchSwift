@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct CatView: View {
+    @State private var dreamIsShowing = false
+    
     var body: some View {
         ZStack {
-            Color(.cyan)
+            Color(dreamIsShowing ? .fishBackground : .cyan)
                 .ignoresSafeArea()
             GeometryReader { geometry in
                 let width = geometry.size.width
@@ -21,13 +23,20 @@ struct CatView: View {
                 let nearLine = size * 0.1
                 let farLine = size * 0.9
                 
-                CloudsView(duration: 8)
+                Toggle(dreamIsShowing ? "Clouds": "Press for Cat Dream", isOn: $dreamIsShowing)
+                    .padding()
+                    .frame(width: width * 0.7)
+                    .background(Gradient(colors: [.white, .cyan]))
+                    .cornerRadius(10)
+                    .position(x: middleX, y: nearLine / 8)
+               
+                CloudsView(showFish: dreamIsShowing, duration: 8)
                     .position(CGPoint(x: middleX, y: nearLine / 2))
                     .frame(width: size / 2)
-                CloudsView(duration: 10)
+                CloudsView(showFish: dreamIsShowing, duration: 10)
                     .position(CGPoint(x: middleX, y: nearLine * 4))
                     .frame(width: size / 1.5)
-                CloudsView(duration: 15)
+                CloudsView(showFish: dreamIsShowing, duration: 15)
                     .position(CGPoint(x: middleX, y: nearLine * 2))
                     .frame(width: size / 1.5)
                 
@@ -40,11 +49,11 @@ struct CatView: View {
                 HeadView()
                     .position(x: middleX , y: farLine)
 
-                EyeView()
+                EyeView(isAnimated: $dreamIsShowing)
                     .frame(width: size * 0.16)
                     .position(x: middleX - nearLine * 1.5, y: farLine)
                 
-                EyeView()
+                EyeView(isAnimated: $dreamIsShowing)
                     .frame(width: size * 0.16)
                     .position(x: middleX + nearLine * 1.5, y: farLine)
                 
@@ -64,7 +73,11 @@ struct CatView: View {
             }
             
             .aspectRatio(1, contentMode: .fit)
+         
         }
+    }
+    private func cloudsShowing() {
+        
     }
 }
 

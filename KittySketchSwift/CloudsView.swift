@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CloudsView: View {
     @State private var cloudOffset = CGFloat.zero
+    var showFish: Bool
     
     let duration: Double
     
@@ -16,7 +17,7 @@ struct CloudsView: View {
         ZStack {
             GeometryReader { geometry in
                 
-                Image(systemName: "cloud.fill")
+                Image(systemName: showFish ? "fish.fill" : "cloud.fill")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: geometry.size.width * 0.6)
@@ -33,7 +34,7 @@ struct CloudsView: View {
                     }
                 
                 //Не получилось добавить границы, поэтому продублировала
-                Image(systemName: "cloud")
+                Image(systemName: showFish ? "fish" : "cloud")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: geometry.size.width * 0.6)
@@ -54,6 +55,6 @@ struct CloudsView: View {
 
 
 #Preview {
-    CloudsView(duration: 5)
+    CloudsView(showFish: true, duration: 5)
         .background(.cyan)
 }
