@@ -17,20 +17,27 @@ struct CatView: View {
                 let height = geometry.size.height
                 let size = min(width, height)
                 let middleX = width / 2
-                // let middleY = height / 2
+                //  let middleY = height / 2
                 let nearLine = size * 0.1
                 let farLine = size * 0.9
+                
+                CloudsView(duration: 3)
+                    .position(CGPoint(x: middleX, y: nearLine / 2))
+                    .frame(width: size / 2)
+                CloudsView(duration: 6)
+                    .position(CGPoint(x: middleX, y: nearLine * 4))
                 
                 //Тело
                 BodyView()
                     .position(CGPoint(x: middleX, y: farLine))
                 
-                //Бант
-                BowView()
-                
                 // Голова
                 HeadView()
                     .position(x: middleX , y: farLine)
+                //Бант
+                BowView()
+                    .position(x: middleX , y: farLine)
+                
                 //Глаза
                 EyeView()
                     .frame(width: size * 0.16)
@@ -40,6 +47,7 @@ struct CatView: View {
                     .frame(width: size * 0.16)
                     .position(x: middleX + nearLine * 1.5, y: farLine)
                 
+                // SunGlassesView()
                 // Нос
                 NoseUIView()
                     .frame(width: size, height: size * 1.3)
@@ -48,13 +56,13 @@ struct CatView: View {
                 MustacheView()
                 MustacheView()
                     .scaleEffect(x: -1, y: 1)
-                    
+                
                 
                 // Уши
-                EarUIView()
+                EarView()
                     .position(x: middleX , y: farLine)
                 
-                EarUIView()
+                EarView()
                     .position(x: middleX, y: farLine)
                     .scaleEffect(x: -1, y: 1)
             }
@@ -96,7 +104,7 @@ struct BodyView: View {
         GeometryReader { geometry in
             let width = geometry.size.width
             let height = geometry.size.height
-        
+            
             Path { path in
                 path.move(to: CGPoint(x: width / 3.17, y: height / 1.37))
                 path.addLine(to: CGPoint(x: width / 6, y: height * 1.13 ))
@@ -111,43 +119,13 @@ struct BodyView: View {
     
 }
 
-struct EyeView: View {
-    var body: some View {
-        GeometryReader { geometry in
-            let width = geometry.size.width
-            let height = geometry.size.height
-            let size = min(width, height)
-            
-            ZStack {
-                Circle().fill(
-                    RadialGradient(
-                        gradient: Gradient(colors: [.white, .cyan, .black]),
-                        center: .center,
-                        startRadius: 1,
-                        endRadius: size
-                    )
-                ).strokeBorder(lineWidth: 6)
-                
-                Circle().fill(.black)
-                    .frame(width: size / 2)
-                
-                Circle().fill(.white)
-                    .frame(width: size * 0.3)
-                    .position(x: size / 5, y: size / 0.34)
-                
-            }
-            .frame(width: width, height: height, alignment: .center)
-        }
-    }
-}
-
 struct MustacheView: View {
     var body: some View {
         GeometryReader { geometry in
             let width = geometry.size.width
             let height = geometry.size.height
             let middleX = width / 2
-        
+            
             Path { path in
                 path.move(to: CGPoint(x: middleX * 0.2, y: height * 0.98))
                 path.addLine(to: CGPoint(x: width * 0.4, y: height * 1.04 ))
@@ -175,7 +153,7 @@ struct MustacheView: View {
     }
     
 }
-//TODO: - доделать бант
+
 struct BowView: View {
     var body: some View {
         GeometryReader { geometry in
@@ -183,14 +161,28 @@ struct BowView: View {
             let height = geometry.size.height
             let middleX = width / 2
             let middleY = height / 2
-        
-            Path { path in
-                path.move(to: CGPoint(x: middleX + 100, y: middleY))
-                path.addLine(to: CGPoint(x: middleX, y: middleY ))
-                            
+            
+            ZStack {
+                Path { path in
+                    path.move(to: CGPoint(x: middleX , y: middleY * 1.74))
+                    path.addLine(to: CGPoint(x: middleX / 1.4, y: middleY * 1.6 ))
+                    path.addLine(to: CGPoint(x: middleX / 1.5, y: middleY * 1.9 ))
+                    path.addLine(to: CGPoint(x: middleX , y: middleY * 1.75 ))
+                    path.addLine(to: CGPoint(x: middleX * 1.27 , y: middleY / 0.63 ))
+                    path.addLine(to: CGPoint(x: middleX * 1.3 , y: middleY * 1.9 ))
+                    path.addLine(to: CGPoint(x: middleX , y: middleY * 1.75 ))
+                    
+                }
+                .fill(.specialityPink)
+                .stroke(.black, lineWidth: 7)
+                
+                Rectangle()
+                    .fill(.white)
+                    .frame(width: width * 0.07, height: height * 0.06)
+                    .overlay(
+                        Rectangle().stroke(.black, lineWidth: 7))
+                    .position(x: middleX , y: middleY * 1.75)
             }
-            .fill(.white)
-            .stroke(.red, lineWidth: 8)
         }
     }
     

@@ -12,7 +12,10 @@
 		202403732BEA2E4D001D2F33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 202403722BEA2E4D001D2F33 /* Assets.xcassets */; };
 		202403762BEA2E4D001D2F33 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 202403752BEA2E4D001D2F33 /* Preview Assets.xcassets */; };
 		2024037D2BEAA51A001D2F33 /* NoseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2024037C2BEAA51A001D2F33 /* NoseUIView.swift */; };
-		2024037F2BEAB6F3001D2F33 /* EarUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2024037E2BEAB6F2001D2F33 /* EarUIView.swift */; };
+		2024037F2BEAB6F3001D2F33 /* EarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2024037E2BEAB6F2001D2F33 /* EarView.swift */; };
+		2093ECFE2BEB8B1700ECF537 /* EyeUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2093ECFD2BEB8B1700ECF537 /* EyeUIView.swift */; };
+		2093ED002BEB994D00ECF537 /* SunGlassesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2093ECFF2BEB994D00ECF537 /* SunGlassesView.swift */; };
+		2093ED022BEBA63700ECF537 /* CloudsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2093ED012BEBA63700ECF537 /* CloudsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,7 +25,10 @@
 		202403722BEA2E4D001D2F33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		202403752BEA2E4D001D2F33 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2024037C2BEAA51A001D2F33 /* NoseUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoseUIView.swift; sourceTree = "<group>"; };
-		2024037E2BEAB6F2001D2F33 /* EarUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarUIView.swift; sourceTree = "<group>"; };
+		2024037E2BEAB6F2001D2F33 /* EarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarView.swift; sourceTree = "<group>"; };
+		2093ECFD2BEB8B1700ECF537 /* EyeUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeUIView.swift; sourceTree = "<group>"; };
+		2093ECFF2BEB994D00ECF537 /* SunGlassesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunGlassesView.swift; sourceTree = "<group>"; };
+		2093ED012BEBA63700ECF537 /* CloudsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +64,10 @@
 				2024036E2BEA2E4C001D2F33 /* KittySketchSwiftApp.swift */,
 				202403702BEA2E4C001D2F33 /* ContentView.swift */,
 				2024037C2BEAA51A001D2F33 /* NoseUIView.swift */,
-				2024037E2BEAB6F2001D2F33 /* EarUIView.swift */,
+				2024037E2BEAB6F2001D2F33 /* EarView.swift */,
+				2093ECFD2BEB8B1700ECF537 /* EyeUIView.swift */,
+				2093ECFF2BEB994D00ECF537 /* SunGlassesView.swift */,
+				2093ED012BEBA63700ECF537 /* CloudsView.swift */,
 				202403722BEA2E4D001D2F33 /* Assets.xcassets */,
 				202403742BEA2E4D001D2F33 /* Preview Content */,
 			);
@@ -143,10 +152,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2093ECFE2BEB8B1700ECF537 /* EyeUIView.swift in Sources */,
 				202403712BEA2E4C001D2F33 /* ContentView.swift in Sources */,
+				2093ED002BEB994D00ECF537 /* SunGlassesView.swift in Sources */,
 				2024037D2BEAA51A001D2F33 /* NoseUIView.swift in Sources */,
 				2024036F2BEA2E4C001D2F33 /* KittySketchSwiftApp.swift in Sources */,
-				2024037F2BEAB6F3001D2F33 /* EarUIView.swift in Sources */,
+				2024037F2BEAB6F3001D2F33 /* EarView.swift in Sources */,
+				2093ED022BEBA63700ECF537 /* CloudsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

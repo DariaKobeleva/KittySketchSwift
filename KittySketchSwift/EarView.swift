@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EarUIView: View {
+struct EarView: View {
     var body: some View {
         GeometryReader { geometry in
             let width = geometry.size.width //200
@@ -38,5 +38,5 @@ struct EarUIView: View {
 }
 
 #Preview {
-    EarUIView()
+    EarView()
 }
